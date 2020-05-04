@@ -1,0 +1,40 @@
+To create label to csv files use following steps:
+
+1. Open Anaconda prompt and activate 'tf' environment.
+2. cd into scripts folder.
+
+Execute below command to convert training images data to csv.
+
+python xml_to_csv.py -i /odp/workspace/images/train -o /odp/workspace/annotations/train_labels.csv
+
+Execute below command to convert test images data to csv.
+
+python xml_to_csv.py -i /odp/workspace/images/test -o /odp/workspace/annotations/test_labels.csv
+
+
+
+
+To Create csv to tensor records use the following steps:
+
+1. Open Anaconda prompt and activate 'tf' environment.
+2. cd into scripts folder.
+
+Execute below command to convert training images data to csv.
+
+python csv_to_record_train.py
+
+Execute below command to convert test images data to csv.
+
+python csv_to_record_test.py
+
+
+
+
+To Train Model
+
+1. Open Anaconda prompt and activate 'tf' environment.
+2. cd into workspace folder.
+
+Execute below command to start training your model.
+
+python train.py --logtostderr --train_dir=training/ --pipeline_config_path=training/pipeline.config
